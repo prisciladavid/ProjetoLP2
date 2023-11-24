@@ -12,11 +12,16 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import CTR.GeraRelatorio;
+
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class RelatorioVIEW extends JFrame {
 
@@ -129,6 +134,11 @@ public class RelatorioVIEW extends JFrame {
 		panel.add(lblDataCli);
 		
 		JButton btnGerar = new JButton("Gerar");
+		btnGerar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new GeraRelatorio();
+			}
+		});
 		btnGerar.setIcon(new ImageIcon(RelatorioVIEW.class.getResource("/VIEW/img/report.png")));
 		btnGerar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnGerar.setBounds(168, 302, 92, 34);
