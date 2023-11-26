@@ -14,33 +14,30 @@ import net.sf.jasperreports.view.JasperViewer;
 
 public class GeraRelatorio {
 
-    public static void main(String[] args) {
+    public GeraRelatorio() {
+    	
+    	// Estabelecer a conexão com o PostgreSQL
+        //Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/bancoParque", "postgres", "postdba");
+    	Connection connection = Conexao.getInstancia().abrirConexao();
     	
     	File file = new File ("GeraRelatorio.java");
     	String pathAbsoluto =  file.getAbsolutePath();
     	//C:\Users\raiss\eclipse-workspace\ProjetoLP2\src\CTR\GeraRelatorio.java
-    	String pathAbsolutoParcial = pathAbsoluto.substring(0, pathAbsoluto.lastIndexOf('\\'))+"\\relatórios\\RelatorioClientes.jrxm";
-        try {
-            // Carregar o driver JDBC
-            Class.forName("org.postgresql.Driver");
-
-            // Estabelecer a conexão com o PostgreSQL
-            Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/bancoParque", "postgres", "postdba");
-
-            // Compilar o arquivo JRXML
-            JasperReport jasperReport = JasperCompileManager.compileReport("C:\\Users\\raiss\\eclipse-workspace\\ProjetoLP2\\relatórios\\RelatorioClientes.jrxm");
-
-            // Parâmetros do relatório, se houver
-            Map<String, Object> parameters = new HashMap<>();
+    	String pathAbsolutoParcial = pathAbsoluto.substring(0, pathAbsoluto.lastIndexOf('\\'))+"\\relatorios\\RelatorioClientes.jrxm";
+        
+    	try {
+        	// Compilar o arquivo JRXML
+            JasperReport jasperReport = JasperCompileManager.compileReport(pathAbsolutoParcial);
 
             // Preencher o relatório
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, connection);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, new HashMap<>(), connection);
 
             // Visualizar o relatório
-            JasperViewer.viewReport(jasperPrint, false);
+            JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
+            jasperViewer.setVisible(true);
 
             // Fechar a conexão
-            connection.close();
+            Conexao.getInstancia().fecharConexao();
 
         } catch (Exception e) {
             e.printStackTrace();
