@@ -6,12 +6,17 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+
+import CTR.BackupCTR;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class PrincipalVIEW extends JFrame {
+	
+	BackupCTR backupCTR = new BackupCTR(); 
 
 	private static final long serialVersionUID = 1L;
 
@@ -91,7 +96,9 @@ public class PrincipalVIEW extends JFrame {
 		JMenuItem mnitemGerar = new JMenuItem("Gerar");
 		mnitemGerar.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mousePressed(MouseEvent e) {				
+			public void mousePressed(MouseEvent e) {
+				
+				backupCTR.confirmaBackup();
 		        JOptionPane.showMessageDialog(null, "Backup executado com sucesso!");
 		}});
 		mnBackup.add(mnitemGerar);
@@ -100,6 +107,8 @@ public class PrincipalVIEW extends JFrame {
 		mnitemRestaurar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
+				
+				backupCTR.confirmaRestaurarBackup();
 		        JOptionPane.showMessageDialog(null, "Backup restaurado com sucesso!");
 			}
 		});
