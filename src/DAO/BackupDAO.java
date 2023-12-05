@@ -11,12 +11,18 @@ import java.util.logging.Logger;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
-
+/**
+ * Classe para realizar o backup de dados
+ */
 public class BackupDAO {
 
     private static final Logger log = Logger.getLogger(BackupDAO.class.getName());
 
-    
+    /**
+     * Fun��o para executar o comando no terminal
+     *
+     * @param command Comando para ser executado no terminal
+     */
     public static void executeCommand(final String command) throws IOException {
         final ArrayList<String> commands = new ArrayList<String>();
         if (System.getProperty("os.name").toLowerCase().indexOf("win") < 0) {
@@ -44,8 +50,12 @@ public class BackupDAO {
             secureClose(br);
         }
     }
- 
-    
+
+    /**
+     * Fun��o para realizar um fechamento seguro
+     *
+     * @param resource Parametro para fechar a edi��o
+     */
     private static void secureClose(final Closeable resource) {
         try {
             if (resource != null) {
@@ -56,7 +66,9 @@ public class BackupDAO {
         }
     }
 
-    
+    /**
+     * Fun��o para confirmar backup
+     */
     public void confirmaBackup() throws IOException {
         JDialog.setDefaultLookAndFeelDecorated(false);
         int response = JOptionPane.showConfirmDialog(null, "Deseja Realmente Realizar o Backup?", "Confirmar",
@@ -75,7 +87,9 @@ public class BackupDAO {
         }
     }
 
-    
+    /**
+     * Fun��o para confimar a restaura��o do backup
+     */
     public void confirmaRestaurarBackup() throws IOException {
         JDialog.setDefaultLookAndFeelDecorated(false);
         int response = JOptionPane.showConfirmDialog(null, "Deseja Realmente Restaurar o Backup?", "Confirmar",
