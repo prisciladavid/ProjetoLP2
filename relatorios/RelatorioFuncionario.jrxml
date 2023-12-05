@@ -64,12 +64,12 @@
 				<text><![CDATA[Funcionários]]></text>
 			</staticText>
 			<image>
-				<reportElement x="420" y="12" width="134" height="123" uuid="4430474d-c93d-45f1-8a95-fe691e2293c1"/>
-				<imageExpression><![CDATA["relatórios/parqueTemático.png"]]></imageExpression>
+				<reportElement x="423" y="10" width="131" height="120" uuid="3b78920c-2507-4ad5-b4e7-a3be4bc0df15"/>
+				<imageExpression><![CDATA["relatorios/parqueTematico.png"]]></imageExpression>
 			</image>
 			<image>
-				<reportElement x="-1" y="40" width="101" height="102" uuid="4a35d460-119f-41c3-a799-3610cc479726"/>
-				<imageExpression><![CDATA["relatórios/balão.png"]]></imageExpression>
+				<reportElement x="20" y="40" width="110" height="101" uuid="79f1a585-a5fa-452a-8916-13060c7ad2ba"/>
+				<imageExpression><![CDATA["relatorios/balao.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

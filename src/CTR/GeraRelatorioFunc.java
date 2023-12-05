@@ -12,15 +12,15 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 
-public class GeraRelatorio {
+public class GeraRelatorioFunc {
 
-    public GeraRelatorio() {
+    public GeraRelatorioFunc() {
     	
     	Connection connection = Conexao.getInstancia().abrirConexao();
     	
-    	File file = new File ("GeraRelatorio.java");
+    	File file = new File ("GeraRelatorioFunc.java");
     	String pathAbsoluto =  file.getAbsolutePath();
-    	String pathAbsolutoParcial = pathAbsoluto.substring(0, pathAbsoluto.lastIndexOf('\\'))+"\\relatorios\\RelatorioClientes.jrxml";
+    	String pathAbsolutoParcial = pathAbsoluto.substring(0, pathAbsoluto.lastIndexOf('\\'))+"\\relatorios\\RelatorioFuncionario.jrxml";
         
     	try {
         	JasperReport jasperReport = JasperCompileManager.compileReport(pathAbsolutoParcial);

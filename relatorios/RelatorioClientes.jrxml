@@ -69,12 +69,12 @@
 				<text><![CDATA[Clientes]]></text>
 			</staticText>
 			<image>
-				<reportElement x="10" y="20" width="140" height="110" uuid="709ba984-ef77-4bc9-b85c-a8509eec0bc5"/>
-				<imageExpression><![CDATA["relatórios/balão.png"]]></imageExpression>
+				<reportElement x="40" y="20" width="140" height="115" uuid="455209c0-c626-482b-804c-bb79f7276fcb"/>
+				<imageExpression><![CDATA["relatorios/balao.png"]]></imageExpression>
 			</image>
 			<image>
-				<reportElement x="630" y="0" width="160" height="135" uuid="16fbc001-616a-4447-8149-97fa8aaf68fe"/>
-				<imageExpression><![CDATA["relatórios/parqueTemático.png"]]></imageExpression>
+				<reportElement x="620" y="0" width="144" height="135" uuid="de76b7a3-9521-4005-9f55-e80a027c4b22"/>
+				<imageExpression><![CDATA["relatorios/parqueTematico.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

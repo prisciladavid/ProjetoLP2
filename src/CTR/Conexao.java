@@ -25,7 +25,6 @@ public class Conexao {
 		
 		try {
             Class.forName(DRIVER);
-            // Substitua "seu_usuario" e "sua_senha" pelos valores reais do seu PostgreSQL
             conexao = DriverManager.getConnection(BD, "postgres", "postdba");
             conexao.setAutoCommit(false);
         } catch (SQLException | ClassNotFoundException e) {
